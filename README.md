@@ -11,13 +11,13 @@ A comprehensive benchmark of state-of-art deep learning algorithms for weed dete
 Datasets and source codes will be made publicly available.
 
 
-## Installation
+## 1. Installation
 - Create a conda environment: `conda create -n cottonweeddetection python=3.8 -y`
 - Active the virtul environment: `conda activate cottonweeddetection`
 - Install requirements: `pip install -r requirements.txt`
 
-## Preparing the Dataset
-### Dataset Preparation
+## 2. Preparing the Dataset
+### 2.1 Dataset Preparation
 - Download the data and unzip to the *datasets/* folder.
 - Run the script to convert the labeled data into YOLO-V5 format: `python commons/vig2yolov5.py`
 - (Optional) Run the script to convert the labeled data into COCO format: `python commons/yolov52coco.py`
@@ -27,15 +27,15 @@ Datasets and source codes will be made publicly available.
 
 You can also download the preprocessed dataset directly at: [here](xx) and put it to the *datasets* folder.
 
-### Dataset Analysis
+### 2.2 (Optional)Dataset Analysis
 - To analysis the dataset, we can run: `python commons/dataset_analysis.py`.
 - To analysis the dataset focusing on the Top-12 classes in a given folder, run: `python commons/dataset_analysis_top12.py --imageDir datasets/Dataset_final/DATA_0/val`.
 
-### (Optional) Prepare your Own Dataset 
+### 2.3 (Optional) Prepare your Own Dataset 
 - Label the dataset using [VGG Image Annotator (VIA)](https://www.robots.ox.ac.uk/~vgg/software/via/).
 - Then transfer the dataset using the above two steps to convert the dataset to YOLOv5 or COCO formats.
 
-## Training and Testing
+## 3. Training and Testing
 - Download the pretrained models from [here](https://drive.google.com/drive/folders/1s_72kdEM6N2J9uklgH8P30HnAcjFkJ1X?usp=sharing)
 and unzip to corresponding folders. For example, you need to put the `yolov3.pt`, `yolov3-spp.pt` and `yolov3-tiny.pt` under the *YOLOV3/* folder.
 - We trained the models for 5 replications on 5 GPUs, readers are recommended to look at the `train_cudax.sh` files. For instance, to run the 0st data folder, we can run:
@@ -43,7 +43,7 @@ and unzip to corresponding folders. For example, you need to put the `yolov3.pt`
 - To test the models, we can run: `bash -i test0.sh`.
 
 
-## Performance
+## 4. Performance
 The YOLO algorithms[1-6] used for our experiments are not maintained by us, please give credit to the authors of the YOLO algorithms[1-6].
 
 # Reference
