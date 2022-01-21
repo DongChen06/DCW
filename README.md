@@ -6,9 +6,7 @@ precision treatments for weed removal. Artificial intelligence (AI) through deep
 key driver to the development of MV technology for weed detection and control. To realize the potential of AI for weed control 
 requires a systematic evaluation of DL models with large-scaled, ground-truthed weed datasets for weed detection. 
 In this study, we present a novel benchmark DeepCottonWeeds (DCW), of DL techniques for weed detection tasks in cotton production systems. 
-The DCW is extensible modular, and unified; it standardizes the process of weed recognition tasks by: 
-1) developing a scalable and diverse dataset, 2) modularizing DL implementations, and 3) unifying the evaluation protocol. 
-
+The DCW is extensible modular, and unified; it standardizes the process of weed recognition tasks by: 1) developing a scalable and diverse dataset, 2) modularizing DL implementations, and 3) unifying the evaluation protocol. 
 A comprehensive benchmark of state-of-art deep learning algorithms for weed detection will be established. By leveraging the DCW pipeline, end users can readily focus on the development of robust deep learning models with automated data processing and experimental evaluations. 
 Datasets and source codes will be made publicly available.
 
@@ -17,8 +15,6 @@ Datasets and source codes will be made publicly available.
 - Create a conda environment: `conda create -n cottonweeddetection python=3.8 -y`
 - Active the virtul environment: `conda activate cottonweeddetection`
 - Install requirements: `pip install -r requirements.txt`
-- Download the pretrained models from and unzip to corresponding folders. For example, you need to put the `yolov3.pt`, `yolov3-spp.pt` and `yolov3-tiny.pt` under the *YOLOV3/* folder.
-
 
 ## Preparing the Dataset
 ### Dataset Preparation
@@ -29,7 +25,7 @@ Datasets and source codes will be made publicly available.
 - Partition the dataset to different folder: `python commons/pationing_dataset_yolov5.py --outputDir [USE ABOSULTE ADDRESS]/DCW/datasets/Dataset_final`, for example:
 `python commons/pationing_dataset_yolov5.py --outputDir /home/dong9/PycharmProjects/DCW/datasets/Dataset_final`
 
-You can also download the preprocessed dataset directly at: .
+You can also download the preprocessed dataset directly at: [here](xx) and put it to the *datasets* folder.
 
 ### Dataset Analysis
 - To analysis the dataset, we can run: `python commons/dataset_analysis.py`.
@@ -40,6 +36,8 @@ You can also download the preprocessed dataset directly at: .
 - Then transfer the dataset using the above two steps to convert the dataset to YOLOv5 or COCO formats.
 
 ## Training and Testing
+- Download the pretrained models from [here](https://drive.google.com/drive/folders/1s_72kdEM6N2J9uklgH8P30HnAcjFkJ1X?usp=sharing)
+and unzip to corresponding folders. For example, you need to put the `yolov3.pt`, `yolov3-spp.pt` and `yolov3-tiny.pt` under the *YOLOV3/* folder.
 - We trained the models for 5 replications on 5 GPUs, readers are recommended to look at the `train_cudax.sh` files. For instance, to run the 0st data folder, we can run:
 `bash -i train_cuda0.sh`.
 - To test the models, we can run: `bash -i test0.sh`.
