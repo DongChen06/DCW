@@ -507,7 +507,7 @@ if __name__ == '__main__':
         assert len(opt.cfg) or len(opt.weights), 'either --cfg or --weights must be specified'
         opt.img_size.extend([opt.img_size[-1]] * (2 - len(opt.img_size)))  # extend to 2 sizes (train, test)
         opt.name = 'evolve' if opt.evolve else opt.name
-        opt.save_dir = increment_path(Path(opt.project) / opt.name, exist_ok=opt.exist_ok | opt.evolve)  # increment run
+        opt.save_dir = increment_path(opt.project + '/' + str(opt.weights[:-3]) + '_' + str(opt.device), exist_ok=opt.exist_ok | opt.evolve)  # increment run
 
     # DDP mode
     device = select_device(opt.device, batch_size=opt.batch_size)

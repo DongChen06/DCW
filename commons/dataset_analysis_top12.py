@@ -3,26 +3,36 @@ import os, csv
 from os import walk
 import json
 import sys
+import argparse
 
 sys.path.append("../")
+
+# Initiate argument parser
+parser = argparse.ArgumentParser(description="Analysis the bounding boxes and image info in a given folder")
+parser.add_argument(
+    '-i', '--imageDir',
+    help='Path to the folder where the image dataset is stored.',
+    type=str,
+    default='datasets/Dataset_final/DATA_0/val')
+args = parser.parse_args()
 
 # store the # of (BB, #image) for each weed, #image represents the weeds occur in how many images
 dic = {
     "Waterhemp": [0, 0],
-    "Ragweed": [0, 0],
-    "SpottedSpurge": [0, 0],
-    "Eclipta": [0, 0],
-    "Carpetweed": [0, 0],
     "MorningGlory": [0, 0],
-    "PricklySida": [0, 0],
     "Purslane": [0, 0],
-    "Goosegrass": [0, 0],
-    "Sicklepod": [0, 0],
-    "CutleafGroundcherry": [0, 0],
+    "SpottedSpurge": [0, 0],
+    "Carpetweed": [0, 0],
+    "Ragweed": [0, 0],
+    "Eclipta": [0, 0],
+    "PricklySida": [0, 0],
     "PalmerAmaranth": [0, 0],
+    "Sicklepod": [0, 0],
+    "Goosegrass": [0, 0],
+    "CutleafGroundcherry": [0, 0]
 }
 
-source_root = "datasets/CottonWeedDataYolov5/val"
+source_root = args.imageDir
 image_root = source_root + '/images'
 json_root = source_root + '/labels_json/'
 
@@ -34,8 +44,8 @@ for (dirpath, dirnames, filenames) in walk(image_root):
         if filename.endswith(ext):
             files.append(os.path.join(dirpath, filename))
 
-if not os.path.isfile('dataset_analysis.csv'):
-    with open('dataset_analysis.csv', mode='w') as csv_file:
+if not os.path.isfile('dataset_analysis_top12.csv'):
+    with open('dataset_analysis_top12.csv', mode='w') as csv_file:
         fieldnames = ['Image Path', "Width", "Height", "Weeds", "x", "y", "w", "h"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
@@ -72,7 +82,7 @@ for file in files:
         dic[label][0] += 1
         dic[label][1] += 1
         total_bb += 1
-        with open('dataset_analysis.csv', 'a+', newline='') as write_obj:
+        with open('dataset_analysis_top12.csv', 'a+', newline='') as write_obj:
             csv_writer = csv.writer(write_obj)
             csv_writer.writerow([file.split('/')[-1], width, height, label, x_min, y_min, w, h])
     else:
@@ -95,7 +105,7 @@ for file in files:
                 weeds.append(label)
 
             total_bb += 1
-            with open('dataset_analysis.csv', 'a+', newline='') as write_obj:
+            with open('dataset_analysis_top12.csv', 'a+', newline='') as write_obj:
                 csv_writer = csv.writer(write_obj)
                 csv_writer.writerow([file.split('/')[-1], width, height, label, x_min, y_min, w, h])
 
@@ -114,5 +124,5 @@ print("The image has the maximum number of bounding boxes:", max_bb_image)
 print("Bounding Boxes:", dic)
 print("----------Summary----------")
 
-with open('bounding_box_summary.json', 'w') as fp:
+with open('bounding_box_summary_top12.json', 'w') as fp:
     json.dump(dic, fp)

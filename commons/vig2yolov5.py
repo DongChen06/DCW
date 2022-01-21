@@ -19,8 +19,8 @@ image_roots = ["datasets/0809_0820_2021_MEFAS", "datasets/06282021_MEFAS_NorthFa
                "datasets/09122021_MEFAS_WBAndrews", "datasets/09132021_MEFAS_NorthFarm"]
 # image_roots = ["datasets/09042021_MEFAS_WBAndrews"]
 
-out_dir = "datasets/CottonWeedDataYolov5_V1"
-json_path = 'commons/class_indices.json'
+out_dir = "datasets/CottonWeedDataYolov5"
+json_path = 'commons/class_indices_top12.json'
 
 os.makedirs(out_dir, exist_ok=True)
 os.makedirs(out_dir + "/images", exist_ok=True)

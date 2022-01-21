@@ -504,7 +504,7 @@ def main(opt, callbacks=Callbacks()):
         if opt.evolve:
             opt.project = str(ROOT / 'runs/evolve')
             opt.exist_ok, opt.resume = opt.resume, False  # pass resume to exist_ok and disable resume
-        opt.save_dir = str(increment_path(Path(opt.project) / opt.name, exist_ok=opt.exist_ok))
+        opt.save_dir = str(increment_path(opt.project + '/' + str(opt.weights[:-3]) + '_' + str(opt.device), exist_ok=opt.exist_ok))
 
     # DDP mode
     device = select_device(opt.device, batch_size=opt.batch_size)

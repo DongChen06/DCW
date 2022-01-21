@@ -7,6 +7,8 @@ import argparse
 import math
 import random
 from os import walk
+import sys
+sys.path.append("../")
 
 
 def iterate_dir(source, labelDir, labeljsonDir, dest, ratio_list):
@@ -38,7 +40,7 @@ def iterate_dir(source, labelDir, labeljsonDir, dest, ratio_list):
     num_val_images = math.ceil(ratio_list[1] * num_images)
     num_test_images = math.ceil(ratio_list[2] * num_images)
 
-    print("total images", "n_train", "n_val", "n_test",
+    print("Total images,", "n_train,", "n_val,", "n_test:",
           num_images, (num_images - num_val_images - num_test_images), num_val_images, num_test_images)
 
     for j in range(num_val_images):
@@ -98,39 +100,41 @@ def main():
         '-i', '--imageDir',
         help='Path to the folder where the image dataset is stored. If not specified, the CWD will be used.',
         type=str,
-        default='/home/dong9/PycharmProjects/CottonWeed_Detection/datasets/CottonWeedDataYolov5/images')
+        default='datasets/CottonWeedDataYolov5/images')
     parser.add_argument(
         '-l', '--labelDir',
         help='Path to the folder where the labels are stored. If not specified, the CWD will be used.',
         type=str,
-        default='/home/dong9/PycharmProjects/CottonWeed_Detection/datasets/CottonWeedDataYolov5/labels')
+        default='datasets/CottonWeedDataYolov5/labels')
     parser.add_argument(
         '-lj', '--labeljsonDir',
         help='Path to the folder where the json labels are stored. If not specified, the CWD will be used.',
         type=str,
-        default='/home/dong9/PycharmProjects/CottonWeed_Detection/datasets/CottonWeedDataYolov5/labels_json')
+        default='datasets/CottonWeedDataYolov5/labels_json')
     parser.add_argument(
         '-o', '--outputDir',
         help='Path to the yolov4 folder where the train and test dirs should be created. '
              'Defaults to the same directory as IMAGEDIR.',
         type=str,
-        default='/home/dong9/PycharmProjects/CottonWeed_Detection/datasets/CottonWeedDataYolov5')
+        default='datasets/Dataset_final')
     parser.add_argument(
         '-r', '--ratio_list',
         help='The ratio of the number of test images over the total number of images. The default is 0.1.',
         default=[0.65, 0.2, 0.15],
         type=list)
+    parser.add_argument('--fold', help='Number of repeated folder we want to run', type=int, default=5)
     args = parser.parse_args()
 
-    # for i in range(5):
-    #     random.seed(i)
-    #     outputDir = args.outputDir + '/DATA_{}'.format(i)
-    #
-    #     # Now we are ready to start the iteration
-    #     iterate_dir(args.imageDir, outputDir, args.ratio_list)
+    for i in range(args.fold):
+        random.seed(i)
+        print("Working on generating DATA folder:" + str(i))
+        outputDir = args.outputDir + '/DATA_{}'.format(i)
 
-    # Now we are ready to start the iteration
-    iterate_dir(args.imageDir, args.labelDir, args.labeljsonDir, args.outputDir, args.ratio_list)
+        # Now we are ready to start the iteration
+        iterate_dir(args.imageDir, args.labelDir, args.labeljsonDir, outputDir, args.ratio_list)
+
+    # # Now we are ready to start the iteration
+    # iterate_dir(args.imageDir, args.labelDir, args.labeljsonDir, args.outputDir, args.ratio_list)
 
 
 if __name__ == '__main__':

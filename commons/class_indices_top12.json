@@ -1,14 +1,14 @@
 {
     "Waterhemp": 0,
-    "Ragweed": 1,
-    "SpottedSpurge": 2,
-    "Eclipta": 3,
+    "MorningGlory": 1,
+    "Purslane": 2,
+    "SpottedSpurge": 3,
     "Carpetweed": 4,
-    "MorningGlory": 5,
-    "PricklySida": 6,
-    "Purslane": 7,
-    "Goosegrass": 8,
+    "Ragweed": 5,
+    "Eclipta": 6,
+    "PricklySida": 7,
+    "PalmerAmaranth": 8,
     "Sicklepod": 9,
-    "CutleafGroundcherry": 10,
-    "PalmerAmaranth": 11
+    "Goosegrass": 10,
+    "CutleafGroundcherry": 11
 }
