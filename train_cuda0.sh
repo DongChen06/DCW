@@ -2,9 +2,9 @@
 # bash -i train_cuda0.sh
 
 # YOLOv3
-#cd ~/PycharmProjects/DCW/YOLOv3; /home/dong9/anaconda3/envs/cottonweeddetection/bin/python train.py --img 640 --device 0 --batch 16 --epochs 5 --data cottonweedsdetection_seed0.yaml --weights yolov3-tiny.pt
-#cd ~/PycharmProjects/DCW/YOLOv3; /home/dong9/anaconda3/envs/cottonweeddetection/bin/python train.py --img 640 --device 0 --batch 16 --epochs 5 --data cottonweedsdetection_seed0.yaml --weights yolov3.pt
-#cd ~/PycharmProjects/DCW/YOLOv3; /home/dong9/anaconda3/envs/cottonweeddetection/bin/python train.py --img 640 --device 0 --batch 16 --epochs 5 --data cottonweedsdetection_seed0.yaml --weights yolov3-spp.pt
+cd ~/PycharmProjects/DCW/YOLOv3; /home/dong9/anaconda3/envs/cottonweeddetection/bin/python train.py --img 640 --device 0 --batch 16 --epochs 5 --data cottonweedsdetection_seed0.yaml --weights yolov3-tiny.pt
+cd ~/PycharmProjects/DCW/YOLOv3; /home/dong9/anaconda3/envs/cottonweeddetection/bin/python train.py --img 640 --device 0 --batch 16 --epochs 5 --data cottonweedsdetection_seed0.yaml --weights yolov3.pt
+cd ~/PycharmProjects/DCW/YOLOv3; /home/dong9/anaconda3/envs/cottonweeddetection/bin/python train.py --img 640 --device 0 --batch 16 --epochs 5 --data cottonweedsdetection_seed0.yaml --weights yolov3-spp.pt
 
 
 # YOLOv4

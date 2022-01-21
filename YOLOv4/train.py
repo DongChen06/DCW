@@ -7,6 +7,9 @@ import time
 from pathlib import Path
 from warnings import warn
 
+import sys
+sys.path.append("../")
+
 import numpy as np
 import torch.distributed as dist
 import torch.nn as nn

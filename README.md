@@ -8,9 +8,8 @@ requires a systematic evaluation of DL models with large-scaled, ground-truthed 
 In this study, we present a novel benchmark DeepCottonWeeds (DCW), of DL techniques for weed detection tasks in cotton production systems. 
 The DCW is extensible modular, and unified; it standardizes the process of weed recognition tasks by: 
 1) developing a scalable and diverse dataset, 2) modularizing DL implementations, and 3) unifying the evaluation protocol. 
-2) A comprehensive benchmark of state-of-art deep learning algorithms for weed detection will be established. 
 
-By leveraging the DCW pipeline, end users can readily focus on the development of robust deep learning models with automated data processing and experimental evaluations. 
+A comprehensive benchmark of state-of-art deep learning algorithms for weed detection will be established. By leveraging the DCW pipeline, end users can readily focus on the development of robust deep learning models with automated data processing and experimental evaluations. 
 Datasets and source codes will be made publicly available.
 
 
@@ -27,6 +26,8 @@ Datasets and source codes will be made publicly available.
 - Run the script to convert the labeled data into YOLO-V5 format: `python commons/vig2yolov5.py`
 - (Optional) Run the script to convert the labeled data into COCO format: `python commons/yolov52coco.py`
 - The generated dataset should have the following format:
+- Partition the dataset to different folder: `python commons/pationing_dataset_yolov5.py --outputDir [USE ABOSULTE ADDRESS]/DCW/datasets/Dataset_final`, for example:
+`python commons/pationing_dataset_yolov5.py --outputDir /home/dong9/PycharmProjects/DCW/datasets/Dataset_final`
 
 You can also download the preprocessed dataset directly at: .
 
@@ -34,12 +35,12 @@ You can also download the preprocessed dataset directly at: .
 - To analysis the dataset, we can run: `python commons/dataset_analysis.py`.
 - To analysis the dataset focusing on the Top-12 classes in a given folder, run: `python commons/dataset_analysis_top12.py --imageDir datasets/Dataset_final/DATA_0/val`.
 
-### Prepare your Own Dataset 
+### (Optional) Prepare your Own Dataset 
 - Label the dataset using [VGG Image Annotator (VIA)](https://www.robots.ox.ac.uk/~vgg/software/via/).
 - Then transfer the dataset using the above two steps to convert the dataset to YOLOv5 or COCO formats.
 
 ## Training and Testing
-- We trained the models for 5 replications on 5 GPUs, readers are recommended to look at the `train_cudax.sh` files. For instance, to run the 1st data folder, we can run:
+- We trained the models for 5 replications on 5 GPUs, readers are recommended to look at the `train_cudax.sh` files. For instance, to run the 0st data folder, we can run:
 `bash -i train_cuda0.sh`.
 - To test the models, we can run: `bash -i test0.sh`.
 

@@ -116,7 +116,7 @@ def main():
         help='Path to the yolov4 folder where the train and test dirs should be created. '
              'Defaults to the same directory as IMAGEDIR.',
         type=str,
-        default='datasets/Dataset_final')
+        default='/home/dong9/PycharmProjects/DCW/datasets/Dataset_final')
     parser.add_argument(
         '-r', '--ratio_list',
         help='The ratio of the number of test images over the total number of images. The default is 0.1.',
