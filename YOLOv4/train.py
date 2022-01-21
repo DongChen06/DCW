@@ -537,7 +537,8 @@ if __name__ == '__main__':
         if opt.global_rank in [-1, 0]:
             logger.info(f'Start Tensorboard with "tensorboard --logdir {opt.project}", view at http://localhost:6006/')
             tb_writer = SummaryWriter(opt.save_dir)  # Tensorboard
-        train(hyp, opt, device, tb_writer, wandb)
+        # train(hyp, opt, device, tb_writer, wandb)
+        train(hyp, opt, device, tb_writer, None)
 
     # Evolve hyperparameters (optional)
     else:
@@ -611,7 +612,8 @@ if __name__ == '__main__':
                 hyp[k] = round(hyp[k], 5)  # significant digits
 
             # Train mutation
-            results = train(hyp.copy(), opt, device, wandb=wandb)
+            # results = train(hyp.copy(), opt, device, wandb=wandb)
+            results = train(hyp.copy(), opt, device, wandb=None)
 
             # Write mutation results
             print_mutation(hyp.copy(), results, yaml_file, opt.bucket)

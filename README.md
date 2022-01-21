@@ -1,4 +1,4 @@
-# DeepWeed Benchmark: Benchmarking the Deep Learning Techniques for Weed Recognition Researches
+# DeepWeed Benchmark: Benchmarking the Deep Learning Techniques for Weed Recognition
 Weeds are among major threats to crop production including cotton. Traditional weed control that relies on broadcast, 
 repeated application of herbicides, is facing challenges with managing herbicide-resistance of weeds while reducing impacts on environments. 
 Machine vision (MV)-based weed control offers a promising weeding solution based on the recognition of weeds in images followed by localized, 
