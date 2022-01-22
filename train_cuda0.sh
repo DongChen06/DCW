@@ -26,6 +26,6 @@ cd ~/PycharmProjects/DCW/YOLOv5;  /home/dong9/anaconda3/envs/cottonweeddetection
 cd ~/PycharmProjects/DCW/YOLOR;  /home/dong9/anaconda3/envs/cottonweeddetection/bin/python  train.py --batch-size 16 --device 0  --img 640 640 --epochs 5 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolor_csp.cfg --weights 'yolor_csp.pt' --name yolor_csp --hyp hyp.scratch.640.yaml
 cd ~/PycharmProjects/DCW/YOLOR;  /home/dong9/anaconda3/envs/cottonweeddetection/bin/python  train.py --batch-size 16 --device 0  --img 640 640 --epochs 5 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolor_csp_x.cfg --weights 'yolor_csp_x.pt' --name yolor_csp_x --hyp hyp.scratch.640.yaml
 cd ~/PycharmProjects/DCW/YOLOR;  /home/dong9/anaconda3/envs/cottonweeddetection/bin/python  train.py --batch-size 16 --device 0  --img 640 640 --epochs 5 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolor_p6.cfg --weights 'yolor_p6.pt' --name yolor_p6 --hyp hyp.scratch.640.yaml
-cd ~/PycharmProjects/DCW/YOLOR;  /home/dong9/anaconda3/envs/cottonweeddetection/bin/python  train.py --batch-size 16 --device 0  --img 640 640 --epochs 5 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolor_w6.cfg --weights 'yolor-w6.pt' --name yolor_w6 --hyp hyp.scratch.640.yaml
+#cd ~/PycharmProjects/DCW/YOLOR;  /home/dong9/anaconda3/envs/cottonweeddetection/bin/python  train.py --batch-size 16 --device 0  --img 640 640 --epochs 5 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolor_w6.cfg --weights 'yolor-w6.pt' --name yolor_w6 --hyp hyp.scratch.640.yaml
 
 #
