@@ -40,10 +40,11 @@ def aug_images(folder_idx):
         print(file)
 
         image = cv2.imread(file)
+        xmlTitle, txtExt = os.path.splitext(os.path.basename(file))
         cv2.imwrite(os.path.join(images_out_dir, os.path.basename(file)), image)
+        copyfile(label_dir + xmlTitle + '.txt', labels_out_dir + xmlTitle + '.txt')
 
         # start the augmentation
-        xmlTitle, txtExt = os.path.splitext(os.path.basename(file))
         bboxes = readYolo(label_dir + xmlTitle + '.txt')
 
         # each image is augmented by 3 times
