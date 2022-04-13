@@ -58,7 +58,12 @@ def draw_boxes(image, bboxes, format='yolo'):
         # need the image height and width to denormalize...
         # ... the bounding box coordinates
         h, w, _ = image.shape
+        colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
         for box_num, box in enumerate(bboxes):
+            if int(box[4]) == 0:
+                color = (255, 0, 0)
+            else:
+                color = (0, 255, 255)
             x1, y1, x2, y2 = yolo2bbox(box)
             # denormalize the coordinates
             xmin = int(x1*w)
@@ -70,8 +75,8 @@ def draw_boxes(image, bboxes, format='yolo'):
             cv2.rectangle(
                 image, 
                 (xmin, ymin), (xmax, ymax),
-                color=(0, 0, 255),
-                thickness=6
+                color=color,
+                thickness=24
             ) 
             box_areas.append(width*height) 
     return image, box_areas

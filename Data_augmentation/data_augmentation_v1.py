@@ -11,7 +11,7 @@ from shutil import copyfile
 # set random seed here
 random.seed(66)
 images_path = '../datasets/Dataset_final/'
-debug = True  # plot the augmented images with bounding boxes
+debug = False  # plot the augmented images with bounding boxes
 
 
 # we only augment the images in the "train" folder

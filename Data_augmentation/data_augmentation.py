@@ -52,7 +52,6 @@ def getCoordinates(filename):
 
 
 def start():
-    count = 3000
     for filename in sorted(os.listdir(imagespath)):
 
         if filename.endswith(".jpg") or filename.endswith(".JPG"):
@@ -64,28 +63,27 @@ def start():
             if xmlTitle == title:
                 # bboxes = getCoordinates(filename)
                 bboxes = readYolo(imagespath+xmlTitle+'.txt')
-                for i in range(0, 6):
+                for i in range(0, 11):
                     img = copy.deepcopy(image)
                     transform = getTransform(i)
                     try:
                         transformed = transform(image=img, bboxes=bboxes)
                         transformed_image = transformed['image']
                         transformed_bboxes = transformed['bboxes']
-                        name = title + str(count) + '.jpg'
+                        name = title + str(i) + '.jpg'
 
                         annot_image, box_areas = draw_boxes(transformed_image, transformed_bboxes, 'yolo')
+                        annot_image = cv2.cvtColor(annot_image, cv2.COLOR_RGB2BGR)
                         cv2.imwrite(output_dir_box + name, annot_image)
 
+                        transformed_image = cv2.cvtColor(transformed_image, cv2.COLOR_RGB2BGR)
                         cv2.imwrite(output_dir + name, transformed_image)
                         # print(transformed_bboxes)
                         # writeVoc(transformed_bboxes, count, transformed_image)
-                        writeYolo(transformed_bboxes, count, title)
-                        count = count+1
+                        writeYolo(transformed_bboxes, i, title)
                     except:
                         print("bounding box issues")
                         pass
-
-                # bboxes = [[int(float(j)) for j in i] for i in bb]
 
 
 def readYolo(filename):
@@ -117,11 +115,11 @@ def getTransform(loop):
         ], bbox_params=A.BboxParams(format='yolo'))
     elif loop == 1:
         transform = A.Compose([
-            A.RandomBrightnessContrast(p=1),
+            A.RandomBrightnessContrast(brightness_limit=0.5, p=1),
         ], bbox_params=A.BboxParams(format='yolo'))
     elif loop == 2:
         transform = A.Compose([
-            A.MultiplicativeNoise(multiplier=0.5, p=0),
+            A.MultiplicativeNoise(multiplier=0.5, p=1),
         ], bbox_params=A.BboxParams(format='yolo'))
     elif loop == 3:
         transform = A.Compose([
@@ -133,7 +131,27 @@ def getTransform(loop):
         ], bbox_params=A.BboxParams(format='yolo'))
     elif loop == 5:
         transform = A.Compose([
-            A.JpegCompression(quality_lower=0, quality_upper=1, p=0.2)
+            A.JpegCompression(quality_lower=0, quality_upper=1, p=1)
+        ], bbox_params=A.BboxParams(format='yolo'))
+    elif loop == 6:
+        transform = A.Compose([
+            A.FancyPCA(alpha=0.6, p=1)
+        ], bbox_params=A.BboxParams(format='yolo'))
+    elif loop == 7:
+        transform = A.Compose([
+            A.Blur(blur_limit=30, p=1)
+        ], bbox_params=A.BboxParams(format='yolo'))
+    elif loop == 8:
+        transform = A.Compose([
+            A.GaussNoise(var_limit=(0, 100.0), p=1)
+        ], bbox_params=A.BboxParams(format='yolo'))
+    elif loop == 9:
+        transform = A.Compose([
+            A.RGBShift(p=1)
+        ], bbox_params=A.BboxParams(format='yolo'))
+    elif loop == 10:
+        transform = A.Compose([
+            A.RGBShift(p=0)
         ], bbox_params=A.BboxParams(format='yolo'))
 
     return transform
