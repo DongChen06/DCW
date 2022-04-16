@@ -27,11 +27,15 @@ Datasets and source codes will be made publicly available.
 
 You can also download the preprocessed dataset directly at: [here](xx) and put it to the *datasets* folder.
 
-### 2.2 (Optional)Dataset Analysis
+### 2.2 (Optional) Data Augmentation
+- To augment the trianing images, one can refer to `Data_augmentation/data_augmentation_v1.py`
+- Sample images are also provided in `datasets/Data_aug/`, one can use `Data_augmentation/data_augmentation.py` to generate examples.
+
+### 2.3 (Optiona2) Dataset Analysis
 - To analysis the dataset, we can run: `python commons/dataset_analysis.py`.
 - To analysis the dataset focusing on the Top-12 classes in a given folder, run: `python commons/dataset_analysis_top12.py --imageDir datasets/Dataset_final/DATA_0/val`.
 
-### 2.3 (Optional) Prepare your Own Dataset 
+### 2.4 (Optiona3) Prepare your Own Dataset 
 - Label the dataset using [VGG Image Annotator (VIA)](https://www.robots.ox.ac.uk/~vgg/software/via/).
 - Then transfer the dataset using the above two steps to convert the dataset to YOLOv5 or COCO formats.
 
