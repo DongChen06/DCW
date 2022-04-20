@@ -5,8 +5,8 @@ class Colors:
     # Ultralytics color palette https://ultralytics.com/
     def __init__(self):
         # hex = matplotlib.colors.TABLEAU_COLORS.values()
-        hex = ('FF3838', 'FF9D97', 'FF701F', 'FFB21D', '48F90A', 'CFD231', '92CC17', '3DDB86', '1A9334', '00D4BB',
-               '2C99A8', '00C2FF', '344593', '6473FF', '0018EC', '8438FF', '520085', 'CB38FF', 'FF95C8', 'FF37C7')
+        hex = ('FF3838', 'FF9D97', 'FF701F',  'CFD231',  '520085', '48F90A', '92CC17', 'FFB21D', '3DDB86', '1A9334', '00D4BB',
+               '2C99A8', '00C2FF', '344593', '6473FF', '0018EC', '8438FF',  'CB38FF', 'FF95C8', 'FF37C7')
         self.palette = [self.hex2rgb('#' + c) for c in hex]
         self.n = len(self.palette)
 
@@ -17,6 +17,7 @@ class Colors:
     @staticmethod
     def hex2rgb(h):  # rgb order (PIL)
         return tuple(int(h[1 + i:1 + i + 2], 16) for i in (0, 2, 4))
+
 
 def draw_boxes(image, bboxes, format='yolo'):
     """
@@ -89,6 +90,7 @@ def draw_boxes(image, bboxes, format='yolo'):
             ymax = int(y2*h)
             width = xmax - xmin
             height = ymax - ymin
+
             cv2.rectangle(
                 image, 
                 (xmin, ymin), (xmax, ymax),
