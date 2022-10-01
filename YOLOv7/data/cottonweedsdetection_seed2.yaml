@@ -1,0 +1,10 @@
+
+path: ../datasets/DATA_2  # dataset root dir
+train: ../datasets/DATA_2/images/train  # train images (relative to 'path') 128 images
+val: ../datasets/DATA_2/images/val  # val images (relative to 'path') 128 images
+test: ../datasets/DATA_2/images/test # test images (optional)
+
+# Classes
+nc: 12  # number of classes
+names: ["Waterhemp", "MorningGlory", "Purslane", "SpottedSpurge", "Carpetweed", "Ragweed",
+        "Eclipta", "PricklySida", "PalmerAmaranth", "Sicklepod", "Goosegrass", "CutleafGroundcherry"]  # class names
