@@ -50,6 +50,11 @@ and unzip to corresponding folders. For example, you need to put the `yolov3.pt`
 ## 4. Performance
 The YOLO algorithms[1-6] used for our experiments are not maintained by us, please give credit to the authors of the YOLO algorithms[1-6].
 
+# Citation:
+If you find the models and or dataset userful, consider cite:
+Fengying Dang, Dong Chen, Yuzhen Lu, Zhaojian Li, Yu Zheng, 2022. DeepCottonWeeds (DCW): a novel benchmark of YOLO object detectors for weed detection in cotton production systems. 2022 ASABE Annual International Meeting  2200214.(doi:10.13031/aim.202200214)
+
+
 # Reference
 - [1-1] YOLOv3: Redmon, Joseph, and Ali Farhadi. "Yolov3: An incremental improvement." arXiv preprint arXiv:1804.02767 (2018).
 - [1-2] YOLOv3 Implementation: https://github.com/ultralytics/yolov3.
