@@ -8,7 +8,7 @@ cd /localscratch2/zhengyu/Documents/DCW/YOLOv3; /localscratch/zhengyu/.conda/env
 
 
 # YOLOv4
-cd /localscratch2/zhengyu/Documents/DCW/YOLOv4;  /localscratch/zhengyu/.conda/envs/cottonweeddetection/bin/python   train.py --device 0 --batch-size 12 --img 640 640 --epochs 300 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolov4.cfg --weights 'yolov4.pt' --name yolov4
+cd /localscratch2/zhengyu/Documents/DCW/YOLOv4;  /localscratch/zhengyu/.conda/envs/cottonweeddetection/bin/python   train.py --device 0 --batch-size 16 --img 640 640 --epochs 300 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolov4.cfg --weights 'yolov4.pt' --name yolov4
 cd /localscratch2/zhengyu/Documents/DCW/YOLOv4;  /localscratch/zhengyu/.conda/envs/cottonweeddetection/bin/python   train.py --device 0 --batch-size 16 --img 640 640 --epochs 300 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolov4-csp-s-leaky.cfg --weights 'yolov4-csp-s-leaky.pt' --name yolov4-pacsp-s-leaky
 cd /localscratch2/zhengyu/Documents/DCW/YOLOv4;  /localscratch/zhengyu/.conda/envs/cottonweeddetection/bin/python   train.py --device 0 --batch-size 16 --img 640 640 --epochs 300 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolov4-csp-leaky.cfg --weights 'yolov4-csp-leaky.pt' --name yolov4-pacsp-leaky
 cd /localscratch2/zhengyu/Documents/DCW/YOLOv4; /localscratch/zhengyu/.conda/envs/cottonweeddetection/bin/python   train.py --device 0 --batch-size 16 --img 640 640 --epochs 300 --data cottonweedsdetection_seed0.yaml --cfg cfg/yolov4-csp-x-leaky.cfg --weights 'yolov4-csp-x-leaky.pt' --name yolov4-pacsp-x-leaky
