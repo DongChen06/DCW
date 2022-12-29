@@ -53,7 +53,7 @@ The YOLO algorithms[1-6] used for our experiments are not maintained by us, plea
 # Citation
 If you find the models and or dataset userful, consider cite:
 
-Fengying Dang, Dong Chen, Yuzhen Lu, Zhaojian Li, Yu Zheng, 2022. DeepCottonWeeds (DCW): a novel benchmark of YOLO object detectors for weed detection in cotton production systems. 2022 ASABE Annual International Meeting  2200214.(doi:10.13031/aim.202200214)
+`Fengying Dang, Dong Chen, Yuzhen Lu, Zhaojian Li, Yu Zheng, 2022. DeepCottonWeeds (DCW): a novel benchmark of YOLO object detectors for weed detection in cotton production systems. 2022 ASABE Annual International Meeting  2200214.(doi:10.13031/aim.202200214)`
 
 
 # Reference
