@@ -8,7 +8,7 @@ requires a systematic evaluation of DL models with large-scaled, ground-truthed 
 In this study, we present a novel benchmark DeepCottonWeeds (DCW), of DL techniques for weed detection tasks in cotton production systems. 
 The DCW is extensible modular, and unified; it standardizes the process of weed recognition tasks by: 1) developing a scalable and diverse dataset, 2) modularizing DL implementations, and 3) unifying the evaluation protocol. 
 A comprehensive benchmark of state-of-art deep learning algorithms for weed detection will be established. By leveraging the DCW pipeline, end users can readily focus on the development of robust deep learning models with automated data processing and experimental evaluations. 
-Datasets and source codes will be made publicly available.
+Datasets and source codes will be made publicly available. [[Video Demos]](https://drive.google.com/drive/folders/1Xvb-KvzDlX5IfAtGbEwZaSIkTvij25rZ?usp=share_link)
 
 
 ## 1. Installation
