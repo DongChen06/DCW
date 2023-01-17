@@ -18,7 +18,7 @@ Datasets and source codes will be made publicly available.
 
 ## 2. Preparing the Dataset
 ### 2.1 Dataset Preparation
-- Download the data and unzip to the *datasets/* folder.
+- Download the data (https://doi.org/10.5281/zenodo.7535814) and unzip to the *datasets/* folder.
 - Run the script to convert the labeled data into YOLO-V5 format: `python commons/vig2yolov5.py`
 - (Optional) Run the script to convert the labeled data into COCO format: `python commons/yolov52coco.py`
 - The generated dataset should have the following format:
