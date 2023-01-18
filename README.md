@@ -53,7 +53,7 @@ The YOLO algorithms[1-6] used for our experiments are not maintained by us, plea
 The video demos can be accessed at [[Video Demos]](https://drive.google.com/drive/folders/1Xvb-KvzDlX5IfAtGbEwZaSIkTvij25rZ?usp=share_link)
 
 # Citation
-If you find the models and or dataset userful, consider cite:
+If you find the models and or the dataset useful, consider citing the follow article:
 
 Dang, F., Chen, D., Lu, Y., Li, Z., 2023. YOLOWeeds: A novel benchmark of YOLO object detectors for multi-class weed detection in cotton production systems. Computers and Electronics in Agriculture. https://doi.org/10.1016/j.compag.2023.107655.
 
