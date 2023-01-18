@@ -54,8 +54,7 @@ The video demos can be accessed at [[Video Demos]](https://drive.google.com/driv
 
 # Citation
 If you find the models and or dataset userful, consider cite:
-
-`Fengying Dang, Dong Chen, Yuzhen Lu, Zhaojian Li, Yu Zheng, 2022. DeepCottonWeeds (DCW): a novel benchmark of YOLO object detectors for weed detection in cotton production systems. 2022 ASABE Annual International Meeting  2200214.(doi:10.13031/aim.202200214)`
+Dang, F., Chen, D., Lu, Y., Li, Z., 2023. YOLOWeeds: A novel benchmark of YOLO object detectors for multi-class weed detection in cotton production systems. Computers and Electronics in Agriculture. https://doi.org/10.1016/j.compag.2023.107655.
 
 
 # Reference
