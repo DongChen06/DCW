@@ -20,7 +20,7 @@ Datasets and source codes will be made publicly available.
 ### 2.1 Dataset Preparation
 - Download the data (https://doi.org/10.5281/zenodo.7535814) and unzip to the *datasets/* folder.
 - Run the script to convert the labeled data into YOLO-V5 format: `python commons/vig2yolov5.py`
-- (Optional) Run the script to convert the labeled data into COCO format: `python commons/yolov52coco.py`
+- (Optional) Run the script to convert the labeled data into COCO format: `python commons/yolov52coco.py` (You may need to partition the dataset first)
 - The generated dataset should have the following format:
 - Partition the dataset to different folder: `python commons/pationing_dataset_yolov5.py --outputDir [USE ABOSULTE ADDRESS]/DCW/datasets/Dataset_final`, for example:
 `python commons/pationing_dataset_yolov5.py --outputDir /home/dong9/PycharmProjects/DCW/datasets/Dataset_final`
