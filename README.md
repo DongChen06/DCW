@@ -25,8 +25,6 @@ Datasets and source codes will be made publicly available.
 - Partition the dataset to different folder: `python commons/pationing_dataset_yolov5.py --outputDir [USE ABOSULTE ADDRESS]/DCW/datasets/Dataset_final`, for example:
 `python commons/pationing_dataset_yolov5.py --outputDir /home/dong9/PycharmProjects/DCW/datasets/Dataset_final`
 
-You can also download the preprocessed dataset directly at: [here](xx) and put it to the *datasets* folder.
-
 ### 2.2 (Optional) Data Augmentation
 - To augment the trianing images, one can refer to `Data_augmentation/data_augmentation_v1.py`
 - Sample images are also provided in `datasets/Data_aug/`, one can use `Data_augmentation/data_augmentation.py` to generate examples.
